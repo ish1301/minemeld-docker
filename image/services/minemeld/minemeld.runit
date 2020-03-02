@@ -56,7 +56,6 @@ fi
 
 # copy default API config anyway
 cp /usr/share/minemeld/config/api/10-defaults.yml /opt/minemeld/local/config/api
-cp /usr/share/minemeld/config/api/30-feeds-auth.yml /opt/minemeld/local/config/api
 
 # delete candidate config to force reload of running config
 /usr/bin/redis-cli  -s /var/run/redis/redis.sock del "mm:config:candidate"
