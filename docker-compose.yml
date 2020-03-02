@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  web:
+    image: paloaltonetworks/minemeld:latest
+    ports:
+      - 6060:443
+      #- 80:80
+    volumes:
+      - minemeld_data:/opt/minemeld/local
+      - minemeld_logs:/opt/minemeld/log
+      #- ./certs/minemeld.crt:/etc/nginx/minemeld.cer
+      #- ./certs/minemeld.pem:/etc/nginx/minemeld.pem
+    deploy:
+      replicas: 1
+
+volumes:
+  minemeld_data:
+  minemeld_logs:
